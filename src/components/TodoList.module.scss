@@ -1,0 +1,84 @@
+.TodoList {
+	.animation_btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40px;
+		gap: 30px;
+		button {
+			padding: 7px 20px;
+			border: none;
+			border-radius: 5px;
+		}
+
+		.selected {
+			background: green;
+			color: white;
+		}
+
+		.default {
+			background: #363636;
+			color: black;
+		}
+	}
+
+	h1 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 60px;
+		filter: drop-shadow(0 0 5px #ffff00);
+	}
+
+	.Input {
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 20px;
+
+		.Input_First {
+			display: flex;
+			gap: 40px;
+			input {
+				padding: 15px 60px;
+				border: none;
+				box-shadow: 0 0 10px yellow;
+				border-radius: 10px;
+			}
+		}
+
+		.Input_Second {
+			display: flex;
+			gap: 40px;
+			input {
+				padding: 15px 60px;
+				border: none;
+				box-shadow: 0 0 10px yellow;
+				border-radius: 10px;
+			}
+		}
+	}
+	.btn_button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		margin-top: 30px;
+
+		button {
+			padding: 10px 30px;
+			border: none;
+			border-radius: 10px;
+		}
+
+		.submit:hover {
+			background: green;
+		}
+
+		.delete_all:hover {
+			background: red;
+		}
+	}
+}

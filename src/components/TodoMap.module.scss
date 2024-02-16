@@ -1,0 +1,65 @@
+.TodoMap {
+	display: flex;
+	gap: 40px;
+	flex-wrap: wrap;
+	.Inputs {
+		button {
+			border: none;
+		}
+		button:hover {
+			background: green;
+		}
+	}
+	.card_map {
+		.cards {
+			border: 4px solid yellow;
+			padding: 25px 40px;
+			border-radius: 10px;
+
+			.img {
+				width: 100%;
+				max-width: 300px;
+				height: auto;
+				border-radius: 10px;
+				border: none;
+			}
+			h2 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			h3 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			p {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.button {
+				display: flex;
+				justify-content: flex-end;
+				align-items: end;
+				gap: 10px;
+				margin-top: 10px;
+
+				button {
+					padding: 5px 10px;
+					border: none;
+					border-radius: 5px;
+				}
+			}
+
+			.delete:hover {
+				background: red;
+			}
+
+			.edit:hover {
+				background: green;
+			}
+		}
+	}
+}
