@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import axios from "axios";
 import { TodoType } from "../types";
 import scss from "./TodoMap.module.scss";
