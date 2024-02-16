@@ -16,15 +16,15 @@ const TodoMap: FC<TodoMapProps> = ({ todos, getTodos }) => {
 	const [editInput3, setEditInput3] = useState("");
 	const [editInput4, setEditInput4] = useState("");
 	const [isEdit, setIsEdit] = useState(false);
-	const [editId, setEditId] = useState("");
+	const [editId, setEditId] = useState(0);
 
-	const deleteTodo = async (id: string) => {
+	const deleteTodo = async (id: number) => {
 		await axios.delete(`${url}/${id}`);
 		getTodos();
 	};
 
-	const updateTodoValue = (id: string) => {
-		const filterData = todos.find((item) => item._id === id);
+	const updateTodoValue = (id: number) => {
+		const filterData = todos.find((item) => item._id === +id);
 		if (filterData) {
 			setEditInput1(filterData.title);
 			setEditInput2(filterData.password);
@@ -35,7 +35,7 @@ const TodoMap: FC<TodoMapProps> = ({ todos, getTodos }) => {
 		}
 	};
 
-	const updateTodo = async (id: string) => {
+	const updateTodo = async (id: number) => {
 		if (!isEdit) return;
 		const updateData = {
 			title: editInput1,
@@ -47,7 +47,7 @@ const TodoMap: FC<TodoMapProps> = ({ todos, getTodos }) => {
 			await axios.patch(`${url}/${id}`, updateData);
 			getTodos();
 			setIsEdit(false);
-			setEditId("");
+			setEditId(0);
 		} catch (error) {
 			console.error(error);
 		}
@@ -57,7 +57,7 @@ const TodoMap: FC<TodoMapProps> = ({ todos, getTodos }) => {
 		<div className={scss.TodoMap}>
 			{todos.map((item) => (
 				<div className={scss.card_map} key={item._id}>
-					{isEdit && editId === item._id ? (
+					{isEdit && +editId === item._id ? (
 						<div className={scss.Inputs}>
 							<input
 								type="text"
